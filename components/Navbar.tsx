@@ -1,49 +1,56 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-md border-b border-gray-200 shadow-sm" style={{ overflow: 'visible' }}>
-      <div className="container mx-auto px-4" style={{ overflow: 'visible' }}>
-        <div className="flex items-center justify-between h-16" style={{ overflow: 'visible' }}>
-          <Link href="/" style={{ overflow: 'visible', display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? 'bg-white shadow-xl py-2' : 'bg-white/95 py-4'
+      }`}
+    >
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between h-16">
+          <Link href="/" className="flex items-center">
             <img
               src="/RK%C3%9C,.png"
               alt="Logo"
-              style={{ 
-                maxHeight: '48px',
-                height: 'auto',
-                width: 'auto',
-                display: 'block',
-                objectFit: 'contain',
-                flexShrink: 0,
-                margin: 0,
-                padding: 0,
-                verticalAlign: 'middle'
-              }}
+              className={`transition-all duration-300 object-contain ${
+                scrolled ? 'h-12' : 'h-16'
+              }`}
             />
           </Link>
-          <div className="flex gap-6">
-            <Link
-              href="/"
-              className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
-            >
-              Ana Sayfa
-            </Link>
-            <Link
-              href="/studio"
-              className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
-            >
-              Studio
-            </Link>
+          
+          <div className="flex gap-8 items-center">
             <Link
               href="/hakkimda"
-              className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
+              className="text-gray-900 hover:text-red-600 transition-all font-bold text-lg tracking-tight"
             >
               Hakkımızda
+            </Link>
+            <Link
+              href="/diziler"
+              className="text-gray-900 hover:text-red-600 transition-all font-bold text-lg tracking-tight"
+            >
+              Diziler
+            </Link>
+            <Link
+              href="/filmler"
+              className="text-gray-900 hover:text-red-600 transition-all font-bold text-lg tracking-tight"
+            >
+              Filmler
             </Link>
           </div>
         </div>
@@ -51,4 +58,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
