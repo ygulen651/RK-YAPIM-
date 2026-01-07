@@ -67,10 +67,12 @@ export default function ContentGrid() {
     <div className="container mx-auto px-4 py-16">
       {films.length > 0 && (
         <section className="mb-16">
-          <h2 className="text-4xl font-bold mb-8 text-white">Filmler</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <h2 className="text-4xl font-bold mb-6 text-white">Filmler</h2>
+          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4" style={{ scrollPadding: '1rem' }}>
             {films.map((film) => (
-              <ContentCard key={film._id} content={film} />
+              <div key={film._id} className="snap-start shrink-0 w-44 sm:w-52">
+                <ContentCard content={film} />
+              </div>
             ))}
           </div>
         </section>
@@ -78,10 +80,12 @@ export default function ContentGrid() {
 
       {diziler.length > 0 && (
         <section>
-          <h2 className="text-4xl font-bold mb-8 text-white">Diziler</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <h2 className="text-4xl font-bold mb-6 text-white">Diziler</h2>
+          <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4" style={{ scrollPadding: '1rem' }}>
             {diziler.map((dizi) => (
-              <ContentCard key={dizi._id} content={dizi} />
+              <div key={dizi._id} className="snap-start shrink-0 w-44 sm:w-52">
+                <ContentCard content={dizi} />
+              </div>
             ))}
           </div>
         </section>

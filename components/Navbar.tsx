@@ -39,6 +39,12 @@ export default function Navbar() {
             >
               Studio
             </Link>
+            <Link
+              href="/hakkimda"
+              className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
+            >
+              Hakkımızda
+            </Link>
           </div>
         </div>
       </div>
