@@ -2,6 +2,8 @@ import Hero from "@/components/Hero";
 import ContentGrid from "@/components/ContentGrid";
 import { client } from "@/lib/sanity";
 
+export const revalidate = 0;
+
 async function getSiteSettings() {
   try {
     const settings = await client.fetch(
@@ -72,7 +74,7 @@ export default async function Home() {
   }
 
   return (
-    <main className="min-h-screen pt-16">
+    <main className="min-h-screen">
       <Hero 
         videoUrls={videoUrls.length > 0 ? videoUrls : undefined}
         title={settings?.heroTitle || 'Film & Dizi Yapımcısı'}
