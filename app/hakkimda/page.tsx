@@ -49,7 +49,7 @@ export default function HakkimdaPage() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            "Rahmi Kukul tarafından İstanbul’da kurulan, sinemanın kalbine yolculuk."
+            &quot;Rahmi Kukul tarafından İstanbul’da kurulan, sinemanın kalbine yolculuk.&quot;
           </motion.p>
         </div>
       </section>
@@ -114,7 +114,7 @@ export default function HakkimdaPage() {
         >
           <div className="w-16 h-1 bg-red-600 mx-auto rounded-full" />
           <p className="text-2xl font-light italic text-gray-200">
-            "Bütçe ve koşulları ayırt etmeksizin bütün işlerimize profesyonellikle eğiliyoruz."
+            &quot;Bütçe ve koşulları ayırt etmeksizin bütün işlerimize profesyonellikle eğiliyoruz.&quot;
           </p>
           <p className="text-gray-400 leading-relaxed">
             Müşteri memnuniyetini ön planda tutan çalışma prensibimiz, her projeyi kendi içinde değerlendirmeye 
@@ -134,7 +134,7 @@ export default function HakkimdaPage() {
             Attığımız bu adımda yeni dostluklar kurmanın heyecanı ile...
           </p>
           <h3 className="text-3xl md:text-4xl font-serif text-white mb-8">
-            "Gülümseyerek ve gururla anımsayabileceğimiz işler ortaya koymak, var olma hedefimizin en büyüğüdür."
+            &quot;Gülümseyerek ve gururla anımsayabileceğimiz işler ortaya koymak, var olma hedefimizin en büyüğüdür.&quot;
           </h3>
           <p className="text-red-500 font-bold tracking-widest uppercase">
             Önümüzdeki nice 15 senelerde beraber çalışmak dileğiyle!
